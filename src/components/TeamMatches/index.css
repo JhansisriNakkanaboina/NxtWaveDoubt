@@ -1,0 +1,48 @@
+/* TeamMatches CSS */
+.team-matches-container {
+  min-height: 100vh;
+  padding: 20px;
+  background-image: linear-gradient(red, rgb(114, 114, 114));
+  color: white;
+}
+
+.team-banner {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.latest-matches-heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.recent-matches-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media (max-width: 767.98px) {
+  .latest-matches-heading {
+    font-size: 1.5em;
+  }
+
+  .team-banner {
+    height: 150px;
+  }
+}

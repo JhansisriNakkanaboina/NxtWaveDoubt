@@ -1,0 +1,58 @@
+/* MatchCard CSS */
+.match-card {
+  background-color: #0a0a0a;
+  color: #f4f6f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: transform 0.2s;
+}
+
+.match-card:hover {
+  transform: scale(1.05);
+}
+
+.competing-team-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.competing-team-name {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+.match-result,
+.match-status {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.match-status.won {
+  color: green;
+}
+
+.match-status.lost {
+  color: red;
+}
+
+@media (max-width: 767.98px) {
+  .match-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .competing-team-logo {
+    width: 40px;
+    height: 40px;
+  }
+}

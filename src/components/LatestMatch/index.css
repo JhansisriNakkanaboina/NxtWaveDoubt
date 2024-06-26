@@ -1,0 +1,46 @@
+/* LatestMatch CSS */
+.latest-match-container {
+  background-color: black;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(253, 252, 252, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1080px;
+  width: 100%;
+  margin: 2px auto;
+}
+
+.latest-match-details,
+.competing-team {
+  margin-bottom: 10px;
+}
+
+.additional-details {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.competing-team {
+  display: flex;
+  align-items: center;
+}
+
+.competing-team-logo {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767.98px) {
+  .latest-match-container {
+    padding: 15px;
+  }
+
+  .competing-team-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
