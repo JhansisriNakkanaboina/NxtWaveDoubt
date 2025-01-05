@@ -3,7 +3,7 @@ import './index.css'
 
 class NotFound extends Component {
   render() {
-    return <h1 className="text">Not Found!!</h1>
+    return <h1 className="text">Page Not Found</h1>
   }
 }
 

@@ -16,7 +16,7 @@ const LatestMatch = ({matchDetails}) => {
   return (
     <div className="latest-match-container">
       <div className="latest-match-details">
-        <h1 className="competing-team-name">{competingTeam}</h1>
+        <p className="competing-team-name">{competingTeam}</p>
         <p className="match-date">{date}</p>
         <p className="match-venue">{venue}</p>
         <p className="match-result">{result}</p>
@@ -29,10 +29,11 @@ const LatestMatch = ({matchDetails}) => {
         />
       </div>
       <div className="additional-details">
-        <p>First Innings: {firstInnings}</p>
-        <p>Second Innings: {secondInnings}</p>
-        <p>Man of the Match: {manOfTheMatch}</p>
-        <p>Umpires: {umpires}</p>
+        <p>First Innings</p>
+        <p>{firstInnings}</p>
+        <p>{secondInnings}</p>
+        <p>{manOfTheMatch}</p>
+        <p>{umpires}</p>
       </div>
     </div>
   )

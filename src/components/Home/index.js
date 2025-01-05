@@ -46,7 +46,7 @@ class Home extends Component {
             <ul className="teams-list">
               {teams.map(team => (
                 <Link to={`/team-matches/${team.id}`} key={team.id}>
-                  <TeamCard team={team} />
+                  <TeamCard key={team.id + 21} team={team} />
                 </Link>
               ))}
             </ul>

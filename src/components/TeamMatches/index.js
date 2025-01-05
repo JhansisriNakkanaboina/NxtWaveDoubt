@@ -26,45 +26,36 @@ class TeamMatches extends Component {
       console.error('No team ID found in route parameters')
       return
     }
+    const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
+    const data = await response.json()
 
-    try {
-      const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
-      if (!response.ok) {
-        throw new Error('Failed to fetch team matches')
-      }
-      const data = await response.json()
-
-      const updatedLatestMatch = {
-        id: data.latest_match_details.id,
-        date: data.latest_match_details.date,
-        venue: data.latest_match_details.venue,
-        result: data.latest_match_details.result,
-        competingTeam: data.latest_match_details.competing_team,
-        competingTeamLogo: data.latest_match_details.competing_team_logo,
-        firstInnings: data.latest_match_details.first_innings,
-        secondInnings: data.latest_match_details.second_innings,
-        manOfTheMatch: data.latest_match_details.man_of_the_match,
-        umpires: data.latest_match_details.umpires,
-      }
-
-      const updatedRecentMatches = data.recent_matches.map(match => ({
-        id: match.id,
-        competingTeam: match.competing_team,
-        competingTeamLogo: match.competing_team_logo,
-        result: match.result,
-        matchStatus: match.match_status,
-      }))
-
-      this.setState({
-        teamBannerUrl: data.team_banner_url,
-        latestMatch: updatedLatestMatch,
-        recentMatches: updatedRecentMatches,
-        loading: false,
-      })
-    } catch (error) {
-      console.error('Error fetching team matches:', error)
-      this.setState({loading: false})
+    const updatedLatestMatch = {
+      id: data.latest_match_details.id,
+      date: data.latest_match_details.date,
+      venue: data.latest_match_details.venue,
+      result: data.latest_match_details.result,
+      competingTeam: data.latest_match_details.competing_team,
+      competingTeamLogo: data.latest_match_details.competing_team_logo,
+      firstInnings: data.latest_match_details.first_innings,
+      secondInnings: data.latest_match_details.second_innings,
+      manOfTheMatch: data.latest_match_details.man_of_the_match,
+      umpires: data.latest_match_details.umpires,
     }
+
+    const updatedRecentMatches = data.recent_matches.map(match1 => ({
+      id: match1.id,
+      competingTeam: match1.competing_team,
+      competingTeamLogo: match1.competing_team_logo,
+      result: match1.result,
+      matchStatus: match1.match_status,
+    }))
+
+    this.setState({
+      teamBannerUrl: data.team_banner_url,
+      latestMatch: updatedLatestMatch,
+      recentMatches: updatedRecentMatches,
+      loading: false,
+    })
   }
 
   render() {
@@ -85,7 +76,7 @@ class TeamMatches extends Component {
     return (
       <div className="team-matches-container">
         {loading ? (
-          <div className="loader-container" data-testid="loader">
+          <div className="loader-container">
             <Loader type="Oval" color="#ffffff" height={50} width={50} />
           </div>
         ) : (
